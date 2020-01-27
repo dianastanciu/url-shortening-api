@@ -1,11 +1,17 @@
 import React from 'react';
 import './App.css';
+import Header from './components/header/Header';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function App() {
   return (
-    <div>
-      Url Shortening App
-    </div>
+    <Container>
+      <Row>
+          <Col xs={12}>
+              <Header/>
+          </Col>
+      </Row>
+    </Container>
   );
 }
 
