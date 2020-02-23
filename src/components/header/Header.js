@@ -4,11 +4,19 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
+let menuActive = 'active';
+let menuInactive = 'inactive';
+let clicked = false;
+
+const toggleMenu = () => {
+    clicked = !clicked;
+};
+
 export default function Header() {
     return (
         <HeaderContainer>
             <img src={Logo} alt="Shortly logo"/>
-            <NavUrls>
+            <NavUrls className={clicked ? menuActive : menuInactive}>
                 <NavLinks>
                     <li><a href="#">Features</a></li>
                     <li><a href="#">Pricing</a></li>
@@ -20,7 +28,7 @@ export default function Header() {
                 </NavLogin>
             </NavUrls>
 
-            <NavBurger>
+            <NavBurger onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faBars} className="burger-icon"></FontAwesomeIcon>
             </NavBurger>
         </HeaderContainer>
